@@ -1,10 +1,38 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+
 import { BsLinkedin, BsTwitterX } from "react-icons/bs";
 import { FaFacebook } from "react-icons/fa";
 import { ImInstagram } from "react-icons/im";
 import GetStartedButton from "./GetStartedButton";
+import { motion, Variants } from "motion/react";
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      ease: "easeOut",
+    },
+  },
+};
 
 const Footer = () => {
   const AboutInsideout = [
@@ -48,19 +76,40 @@ const Footer = () => {
           }}
         ></div>
         <div className="md:h-auto bg-white px-2 md:px-32 py-12 flex-1 flex flex-col  items-center md:items-start justify-center rounded-2xl space-y-2">
-          <h1 className="text-2xl md:text-4xl font-semibold md:font-medium">
-            Bring Smart Sound Home Today
-          </h1>
-          <p className="px-8 md:px-0 mb-6 text-xs md:text-sm text-slate-500">
-            Have a question or need help choosing the right solution?
-          </p>
-          <GetStartedButton />
+          <motion.div
+            variants={containerVariants}
+            initial={"hidden"}
+            whileInView={"visible"}
+            viewport={{ once: true, amount: 0.4 }}
+          >
+            <motion.h1
+              variants={itemVariants}
+              className="text-2xl md:text-4xl font-semibold md:font-medium"
+            >
+              Bring Smart Sound Home Today
+            </motion.h1>
+            <motion.p
+              variants={itemVariants}
+              className="px-8 md:px-0 mb-6 text-xs md:text-sm text-slate-500"
+            >
+              Have a question or need help choosing the right solution?
+            </motion.p>
+            <motion.div variants={itemVariants}>
+              <GetStartedButton />
+            </motion.div>
+          </motion.div>
         </div>
       </div>
       <div className="m-1 p-12 rounded-2xl bg-green-800 h-auto flex flex-col">
         <div className="flex flex-col md:flex-row md:items-center space-y-4 space-x-4 md:justify-between text-slate-400">
           <div className="">
-            <div className="flex">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="flex"
+            >
               <Link href={"/"}>
                 <Image
                   alt="logo-bud"
@@ -78,87 +127,139 @@ const Footer = () => {
                   Smart Living & 3D Virtual Tours in Ghana
                 </p>
               </div>
-            </div>
-            <div className="mt-4 text-sm">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="mt-4 text-sm"
+            >
               Smart-living and property-technology designed for Ghanaian homes{" "}
               <br />
               and urban realities. Reliable. Renter-friendly. Outage-ready.
-            </div>
+            </motion.div>
           </div>
 
           {/* About Insideout */}
           <div className="flex flex-col text-lime-300 space-y-4">
             <p className="text-sm">About Insideout</p>
-            {AboutInsideout.map((url) => (
-              <Link
+            {AboutInsideout.map((url, index) => (
+              <motion.a
                 key={url.href}
                 href={url.href}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                  delay: index * 0.2,
+                }}
                 className="text-slate-400 text-xs hover:text-lime-300 transition-colors duration-300"
               >
                 {url.label}
-              </Link>
+              </motion.a>
             ))}
           </div>
 
           {/* Products */}
           <div className="flex flex-col space-y-4 text-lime-300">
             <p className="text-sm">Products</p>
-            {Products.map((url) => (
-              <Link
+            {Products.map((url, index) => (
+              <motion.a
                 key={url.href}
                 href={url.href}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                  delay: index * 0.2,
+                }}
                 className="text-slate-400 text-xs hover:text-lime-300 transition-colors duration-300"
               >
                 {url.label}
-              </Link>
+              </motion.a>
             ))}
           </div>
 
           {/* Support */}
           <div className="flex flex-col space-y-4 text-lime-300">
             <p className="text-sm">Support</p>
-            {Support.map((url) => (
-              <Link
+            {Support.map((url, index) => (
+              <motion.a
                 key={url.href}
                 href={url.href}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                  delay: index * 0.2,
+                }}
                 className="text-slate-400 text-xs hover:text-lime-300 transition-colors duration-300"
               >
                 {url.label}
-              </Link>
+              </motion.a>
             ))}
           </div>
 
           {/* Quick Links */}
           <div className="flex flex-col md:-mt-4 space-y-4 text-lime-300">
             <p className="text-sm">Get Started</p>
-            {GetStarted.map((url) => (
-              <Link
+            {GetStarted.map((url, index) => (
+              <motion.a
                 key={url.href}
                 href={url.href}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                  delay: index * 0.2,
+                }}
                 className="text-slate-400 text-xs hover:text-lime-300 transition-colors duration-300"
               >
                 {url.label}
-              </Link>
+              </motion.a>
             ))}
           </div>
         </div>
         <div className="flex flex-col md:flex-row mt-4 md:items-end justify-between text-slate-400">
           <div className="flex space-x-4 space-y-4">
-            {Socials.map((url) => (
-              <div
+            {Socials.map((url, index) => (
+              <motion.div
                 key={url.href}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{
+                  duration: 0.8,
+                  ease: "easeOut",
+                  delay: index * 0.2,
+                }}
                 className="w-8 h-5 hover:text-lime-300 transition-colors duration-300"
               >
                 {url.icon}
-              </div>
+              </motion.div>
             ))}
           </div>
-          <div className="">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className=""
+          >
             <p className="text-xs">
               &copy; {new Date().getFullYear()} Insideout Automation. All Rights
               Reserved
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

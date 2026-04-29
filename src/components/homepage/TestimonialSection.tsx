@@ -2,6 +2,7 @@
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 const Testimonials = [
   {
@@ -54,25 +55,55 @@ const TestimonialSection = () => {
 
   return (
     <div className="h-screen hidden p-2 md:flex flex-col items-center bg-black/5 justify-center space-y-4">
-      <h1 className="font-medium text-2xl md:text-4xl text-black/25 relative right-10 md:right-65 mb-6">
+      <motion.h1
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+        className="font-medium text-2xl md:text-4xl text-black/25 relative right-10 md:right-65 mb-6"
+      >
         Client Reviews & <span className="text-black">Testimonials</span>
-      </h1>
-      <div className="bg-white flex flex-col-reverse md:flex-row-reverse md:h-90 md:w-250 rounded-2xl p-2 gap-2">
+      </motion.h1>
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeInOut", delay: 0.3 }}
+        className="bg-white flex flex-col-reverse md:flex-row-reverse md:h-90 md:w-250 rounded-2xl p-2 gap-2"
+      >
         <div
           className="bg-gray-300/55 basis-2/3 rounded-2xl flex flex-col justify-between p-6"
           key={testimonial.id}
         >
-          <div className="space-y-2">
-            <h1 className="font-semibold">{testimonial.title}</h1>
-            <p className="font-extralight text-xs transition-opacity duration-300">
-              {testimonial.testimony}
-            </p>
-          </div>
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 1.8, ease: "easeInOut" }}
+              className="space-y-2"
+            >
+              <h1 className="font-semibold">{testimonial.title}</h1>
+              <p className="font-extralight text-xs transition-opacity duration-300">
+                {testimonial.testimony}
+              </p>
+            </motion.div>
+          </AnimatePresence>
           <div>
             <hr className="text-black/15" />
           </div>
           <div className="flex items-center gap-4">
-            <div className="basis-5xs h-50 md:h-auto">
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, amount: 0.4 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.8 }}
+              className="basis-5xs h-50 md:h-auto"
+            >
               <Image
                 className="rounded-xl md:h-22"
                 alt="img"
@@ -80,13 +111,23 @@ const TestimonialSection = () => {
                 height={250}
                 src={"/1.jpg"}
               />
-            </div>
+            </motion.div>
             <div className="basis-xl h-50 md:h-auto flex flex-col md:relative md:top-1">
-              <Quote className="rotate-180 mb-4 text-black/30" />
-              <div className="text-left">
-                <h1 className="text-sm font-semibold">{testimonial.name}</h1>
-                <p className="text-xs font-extralight ">{testimonial.role}</p>
-              </div>
+              <AnimatePresence mode="wait">
+                <Quote className="rotate-180 mb-4 text-black/30" />
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 30 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  exit={{ opacity: 1, x: -50 }}
+                  transition={{ duration: 1.5, ease: "easeInOut" }}
+                  className="text-left"
+                >
+                  <h1 className="text-sm font-semibold">{testimonial.name}</h1>
+                  <p className="text-xs font-extralight ">{testimonial.role}</p>
+                </motion.div>
+              </AnimatePresence>
             </div>
 
             {/* Left & Right Button : I'm yet to configure them */}
@@ -104,7 +145,7 @@ const TestimonialSection = () => {
           className="bg-cover basis-1/3 rounded-2xl"
           style={{ backgroundImage: "url(/2.jpg)" }}
         ></div>
-      </div>
+      </motion.div>
     </div>
   );
 };

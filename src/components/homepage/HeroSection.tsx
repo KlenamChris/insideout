@@ -15,7 +15,7 @@ const HeroSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
         >
           <div className="md:font-bold font-semibold text-4xl md:text-7xl">
             <h2>Smart Living</h2>
