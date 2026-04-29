@@ -75,7 +75,7 @@ const TestimonialSection = () => {
           className="bg-gray-300/55 basis-2/3 rounded-2xl flex flex-col justify-between p-6"
           key={testimonial.id}
         >
-          <AnimatePresence mode="wait">
+          <AnimatePresence>
             <motion.div
               key={index}
               initial={{ opacity: 0, x: 50 }}
@@ -113,7 +113,7 @@ const TestimonialSection = () => {
               />
             </motion.div>
             <div className="basis-xl h-50 md:h-auto flex flex-col md:relative md:top-1">
-              <AnimatePresence mode="wait">
+              <AnimatePresence>
                 <Quote className="rotate-180 mb-4 text-black/30" />
                 <motion.div
                   key={index}
