@@ -75,12 +75,13 @@ const Footer = () => {
             backgroundImage: "url(/2.jpg)",
           }}
         ></div>
-        <div className="md:h-auto bg-white px-2 md:px-32 py-12 flex-1 flex flex-col  items-center md:items-start justify-center rounded-2xl space-y-2">
+        <div>
           <motion.div
             variants={containerVariants}
             initial={"hidden"}
             whileInView={"visible"}
             viewport={{ once: true, amount: 0.4 }}
+            className="md:h-auto bg-white px-2 md:px-32 py-12 flex-1 flex flex-col  items-center md:items-start justify-center rounded-2xl space-y-2"
           >
             <motion.h1
               variants={itemVariants}
