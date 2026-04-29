@@ -70,18 +70,18 @@ const Footer = () => {
     <div className="h-auto py-1 bg-black/5">
       <div className="flex flex-col md:flex-row px-2 pt-4 h-auto md:h-100 p-2 space-x-3 space-y-3 md:space-y-0">
         <div
-          className="flex bg-center bg-cover w-full h-90 md:w-100 md:h-auto rounded-2xl"
+          className="flex bg-center bg-cover w-full h-90 md:w-100 md:basis-1/3 md:h-auto rounded-2xl"
           style={{
             backgroundImage: "url(/2.jpg)",
           }}
         ></div>
-        <div>
+        <div className="bg-white md:px-32 rounded-2xl space-y-2 md:h-auto md:items-start flex basis-2/3 py-12 px-2">
           <motion.div
             variants={containerVariants}
             initial={"hidden"}
             whileInView={"visible"}
             viewport={{ once: true, amount: 0.4 }}
-            className="md:h-auto bg-white px-2 md:px-32 py-12 flex-1 flex flex-col  items-center md:items-start justify-center rounded-2xl space-y-2"
+            className="px-2 py-12 flex-1 flex flex-col  items-center  justify-center "
           >
             <motion.h1
               variants={itemVariants}
@@ -91,7 +91,7 @@ const Footer = () => {
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="px-8 md:px-0 mb-6 text-xs md:text-sm text-slate-500"
+              className="px-2 pt-2 md:px-0 mb-6 text-xs md:text-sm text-slate-500"
             >
               Have a question or need help choosing the right solution?
             </motion.p>
