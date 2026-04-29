@@ -10,7 +10,7 @@ const Navbar = () => {
     { label: "Home", href: "/" },
     { label: "Products", href: "/products" },
     { label: "Features", href: "/features" },
-    { label: "Contact", href: "/contact" },
+    { label: "Contact", href: "/contact-us" },
   ];
 
   const [isScrolled, setIsScrolled] = useState(false);

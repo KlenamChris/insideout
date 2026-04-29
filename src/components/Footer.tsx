@@ -54,7 +54,7 @@ const Footer = () => {
     { label: "Privacy Policy", href: "/privacy-policy" },
   ];
   const GetStarted = [
-    { label: "Buy Now", href: "/contact" },
+    { label: "Buy Now", href: "/contact-us" },
     { label: "Starter Guide", href: "/products" },
     { label: "About", href: "/about" },
     { label: "Partner With Us", href: "/partner" },
