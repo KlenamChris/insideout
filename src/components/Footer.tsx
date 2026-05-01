@@ -96,7 +96,10 @@ const Footer = () => {
               Have a question or need help choosing the right solution?
             </motion.p>
             <motion.div variants={itemVariants}>
-              <GetStartedButton />
+              <GetStartedButton
+                className="bg-green-800 text-white"
+                iconBg="bg-white text-green-800"
+              />
             </motion.div>
           </motion.div>
         </div>

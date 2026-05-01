@@ -61,7 +61,7 @@ const itemsVariants: Variants = {
 
 const KeyFeaturesSection = () => {
   return (
-    <div className="h-auto pt-15 md:pt-0 md:h-150 p-2 flex flex-col items-center bg-black/5 justify-center rounded-2xl space-y-4">
+    <div className="h-auto pt-15 md:pt-0 md:h-150 p-2 flex flex-col items-center bg-black/5 justify-center space-y-4">
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -69,7 +69,7 @@ const KeyFeaturesSection = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="font-medium text-2xl md:text-4xl text-black/25 relative right-17 md:right-75 md:mb-6"
       >
-        Key <span className="text-black">Features</span> & Benefits
+        Key <span className="text-green-800">Features</span> & Benefits
       </motion.h1>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -83,7 +83,7 @@ const KeyFeaturesSection = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="bg-gray-300/55 basis-1/2 rounded-2xl"
+          className="bg-green-800 basis-1/2 rounded-2xl"
         >
           {Features.map((feature) => (
             <motion.div
@@ -91,7 +91,7 @@ const KeyFeaturesSection = () => {
               variants={itemsVariants}
               className="bg-white rounded-2xl p-4 m-1.5 h-22 flex flex-row gap-4 items-center"
             >
-              <div className="p-3 bg-black/15 rounded-full ">
+              <div className="p-3 bg-lime-300 rounded-full ">
                 {feature.icon}
               </div>
               <div className="flex flex-col">
