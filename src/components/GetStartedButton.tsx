@@ -13,7 +13,11 @@ type GetStartedButtonProps = {
 const GetStartedButton = ({
   label = "Get Started",
   iconBg = "",
-  icon = <ChevronRight className={`w-5 h-5`} />,
+  icon = (
+    <ChevronRight
+      className={`w-5 h-5`}
+    />
+  ),
   onClick,
   className = "",
 }: GetStartedButtonProps) => {

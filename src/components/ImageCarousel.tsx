@@ -78,11 +78,11 @@ export default function ImageCarousel() {
             <div className="absolute left-0 top-0 z-10 flex h-full w-full flex-col justify-between p-6 sm:p-10 lg:p-12">
               {/* TEXT */}
               <div className="">
-                <h3 className="text-xl font-semibold tracking-tight text-white sm:text-2xl">
+                <h3 className="text-xl font-semibold tracking-tight text-bud sm:text-2xl">
                   {products[current].title}
                 </h3>
 
-                <p className="mt-2 text-sm text-white/60 sm:text-base">
+                <p className="mt-2 text-sm text-white/80 sm:text-base">
                   {products[current].subtitle}
                 </p>
               </div>
@@ -96,8 +96,8 @@ export default function ImageCarousel() {
                 className="flex justify-end"
               >
                 <GetStartedButton
-                  className="bg-white text-black"
-                  iconBg="bg-green-800 text-white"
+                  className="bg-white text-black font-medium"
+                  iconBg="bg-evergreen text-bud"
                 />
               </motion.div>
             </div>
@@ -133,15 +133,15 @@ export default function ImageCarousel() {
         onClick={prevSlide}
         className="absolute bottom-5 left-3 md:left-20 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-white/10 backdrop-blur-md transition hover:bg-white/20 sm:left-6 lg:bottom-10"
       >
-        <ChevronLeft className="h-6 w-6 text-white" />
+        <ChevronLeft className="h-6 w-6 text-bud" />
       </button>
 
       {/* RIGHT BUTTON */}
       <button
         onClick={nextSlide}
-        className="absolute right-3 md:right-20 top-5 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-white transition hover:scale-105 sm:right-6 lg:top-10"
+        className="absolute right-60 md:right-20 bottom-5 md:top-5 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-bud transition hover:scale-105 sm:right-6 lg:top-10"
       >
-        <ChevronRight className="h-6 w-6 text-black" />
+        <ChevronRight className="h-6 w-6 text-evergreen" />
       </button>
     </div>
   );

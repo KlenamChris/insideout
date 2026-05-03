@@ -9,14 +9,33 @@
   scrollbar-width: none;
 }
 
+/* // Primary => Dark Spring Green => #237c4a ---- buttons, links, active states, focus rings
+// Secondary => June Bud => #b6e14f ---- CTA highlights, Badges, Hover accents, success-style emphasis.
+// Neutral Base => main bg => #ffffff | text => #000000 */
+
+
 @theme {
+  /* colors */
+  --color-white: #ffffff;
+  --color-spring: #237c4a;
+  --color-evergreen: #14532d;
+  --color-bud: #b6e14f;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  /* container */
   --contianer-4xs: 14rem;
   --contianer-5xs: 12rem;
 }
 
 @keyframes fade {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .animate-fade {

@@ -56,7 +56,7 @@ const Footer = () => {
   const GetStarted = [
     { label: "Buy Now", href: "/contact-us" },
     { label: "Starter Guide", href: "/products" },
-    { label: "About", href: "/about" },
+    { label: "Blog", href: "/blog" },
     { label: "Partner With Us", href: "/partner" },
   ];
   const Socials = [
@@ -67,7 +67,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="h-auto py-1 bg-black/5">
+    <div className="h-auto py-1 bg-spring">
       <div className="flex flex-col md:flex-row px-2 pt-4 h-auto md:h-100 p-2 space-x-3 space-y-3 md:space-y-0">
         <div
           className="flex bg-center bg-cover w-full h-90 md:w-100 md:basis-1/3 md:h-auto rounded-2xl"
@@ -75,7 +75,7 @@ const Footer = () => {
             backgroundImage: "url(/2.jpg)",
           }}
         ></div>
-        <div className="bg-white md:px-32 rounded-2xl space-y-2 md:h-auto md:items-start flex basis-2/3 py-12 px-2">
+        <div className="bg-bud md:px-32 rounded-2xl space-y-2 md:h-auto md:items-start flex basis-2/3 py-12 px-2">
           <motion.div
             variants={containerVariants}
             initial={"hidden"}
@@ -85,26 +85,26 @@ const Footer = () => {
           >
             <motion.h1
               variants={itemVariants}
-              className="text-2xl md:text-4xl font-semibold md:font-medium"
+              className="text-2xl md:text-4xl font-semibold md:font-medium text-evergreen"
             >
               Bring Smart Sound Home Today
             </motion.h1>
             <motion.p
               variants={itemVariants}
-              className="px-2 pt-2 md:px-0 mb-6 text-xs md:text-sm text-slate-500"
+              className="px-2 pt-2 md:px-0 mb-6 text-xs md:text-sm text-black"
             >
               Have a question or need help choosing the right solution?
             </motion.p>
             <motion.div variants={itemVariants}>
               <GetStartedButton
-                className="bg-green-800 text-white"
-                iconBg="bg-white text-green-800"
+                className="bg-evergreen text-white font-medium"
+                iconBg="bg-bud text-evergreen"
               />
             </motion.div>
           </motion.div>
         </div>
       </div>
-      <div className="m-1 p-12 rounded-2xl bg-green-800 h-auto flex flex-col">
+      <div className="m-1 p-12 rounded-2xl bg-evergreen h-auto flex flex-col">
         <div className="flex flex-col md:flex-row md:items-center space-y-4 space-x-4 md:justify-between text-slate-400">
           <div className="">
             <motion.div
@@ -124,7 +124,7 @@ const Footer = () => {
                 />
               </Link>
               <div className="ml-1 md:ml-3">
-                <h2 className="font-bold text-2xl text-lime-300 hover:text-lime-300/40">
+                <h2 className="font-bold text-2xl text-bud hover:text-bud/40">
                   Insideout Automation
                 </h2>
                 <p className="-ml-6 md:ml-0">
@@ -146,7 +146,7 @@ const Footer = () => {
           </div>
 
           {/* About Insideout */}
-          <div className="flex flex-col text-lime-300 space-y-4">
+          <div className="flex flex-col text-bud space-y-4">
             <p className="text-sm">About Insideout</p>
             {AboutInsideout.map((url, index) => (
               <motion.a
@@ -160,7 +160,7 @@ const Footer = () => {
                   ease: "easeOut",
                   delay: index * 0.2,
                 }}
-                className="text-slate-400 text-xs hover:text-lime-300 transition-colors duration-300"
+                className="text-slate-400 text-xs hover:text-bud transition-colors duration-300"
               >
                 {url.label}
               </motion.a>
@@ -168,7 +168,7 @@ const Footer = () => {
           </div>
 
           {/* Products */}
-          <div className="flex flex-col space-y-4 text-lime-300">
+          <div className="flex flex-col space-y-4 text-bud">
             <p className="text-sm">Products</p>
             {Products.map((url, index) => (
               <motion.a
@@ -182,7 +182,7 @@ const Footer = () => {
                   ease: "easeOut",
                   delay: index * 0.2,
                 }}
-                className="text-slate-400 text-xs hover:text-lime-300 transition-colors duration-300"
+                className="text-slate-400 text-xs hover:text-bud transition-colors duration-300"
               >
                 {url.label}
               </motion.a>
@@ -190,7 +190,7 @@ const Footer = () => {
           </div>
 
           {/* Support */}
-          <div className="flex flex-col space-y-4 text-lime-300">
+          <div className="flex flex-col space-y-4 text-bud">
             <p className="text-sm">Support</p>
             {Support.map((url, index) => (
               <motion.a
@@ -204,7 +204,7 @@ const Footer = () => {
                   ease: "easeOut",
                   delay: index * 0.2,
                 }}
-                className="text-slate-400 text-xs hover:text-lime-300 transition-colors duration-300"
+                className="text-slate-400 text-xs hover:text-bud transition-colors duration-300"
               >
                 {url.label}
               </motion.a>
@@ -212,7 +212,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="flex flex-col md:-mt-4 space-y-4 text-lime-300">
+          <div className="flex flex-col md:-mt-4 space-y-4 text-bud">
             <p className="text-sm">Get Started</p>
             {GetStarted.map((url, index) => (
               <motion.a
@@ -226,7 +226,7 @@ const Footer = () => {
                   ease: "easeOut",
                   delay: index * 0.2,
                 }}
-                className="text-slate-400 text-xs hover:text-lime-300 transition-colors duration-300"
+                className="text-slate-400 text-xs hover:text-bud transition-colors duration-300"
               >
                 {url.label}
               </motion.a>
@@ -246,7 +246,7 @@ const Footer = () => {
                   ease: "easeOut",
                   delay: index * 0.2,
                 }}
-                className="w-8 h-5 hover:text-lime-300 transition-colors duration-300"
+                className="w-8 h-5 hover:text-bud transition-colors duration-300"
               >
                 {url.icon}
               </motion.div>
@@ -260,8 +260,9 @@ const Footer = () => {
             className=""
           >
             <p className="text-xs">
-              &copy; {new Date().getFullYear()} Insideout Automation. All Rights
-              Reserved
+              &copy; {new Date().getFullYear()}
+              <span className="text-bud"> Insideout Automation. </span>
+              All Rights Reserved
             </p>
           </motion.div>
         </div>

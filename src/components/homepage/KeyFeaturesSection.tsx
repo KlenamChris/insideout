@@ -61,7 +61,7 @@ const itemsVariants: Variants = {
 
 const KeyFeaturesSection = () => {
   return (
-    <div className="h-auto pt-15 md:pt-0 md:h-150 p-2 flex flex-col items-center bg-black/5 justify-center space-y-4">
+    <div className="h-auto pt-15 md:pt-0 md:h-150 p-2 flex flex-col items-center bg-spring justify-center space-y-4">
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -69,33 +69,34 @@ const KeyFeaturesSection = () => {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="font-medium text-2xl md:text-4xl text-black/25 relative right-17 md:right-75 md:mb-6"
       >
-        Key <span className="text-green-800">Features</span> & Benefits
+        Key <span className="text-bud">Features</span> & Benefits
       </motion.h1>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.4 }}
         transition={{ duration: 0.6, ease: "easeIn", delay: 0.2 }}
-        className="bg-white flex flex-col md:flex-row h-200 md:h-auto md:w-250 rounded-2xl p-2 gap-2"
+        className="bg-bud flex flex-col md:flex-row h-200 md:h-auto md:w-250 rounded-2xl p-2 gap-2"
       >
         <motion.div
           variants={ContainerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="bg-green-800 basis-1/2 rounded-2xl"
+          className="bg-evergreen basis-1/2 rounded-2xl"
         >
           {Features.map((feature) => (
             <motion.div
               key={feature.label}
               variants={itemsVariants}
+              whileHover={{ scale: 1.03 }}
               className="bg-white rounded-2xl p-4 m-1.5 h-22 flex flex-row gap-4 items-center"
             >
-              <div className="p-3 bg-lime-300 rounded-full ">
+              <div className="p-3 bg-bud rounded-full border border-bud/20 text-evergreen">
                 {feature.icon}
               </div>
               <div className="flex flex-col">
-                <h1 className="">{feature.label}</h1>
+                <h1 className="text-evergreen font-medium">{feature.label}</h1>
                 <p className="font-extralight text-xs">{feature.subtext}</p>
               </div>
             </motion.div>

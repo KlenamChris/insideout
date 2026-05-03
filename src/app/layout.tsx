@@ -11,7 +11,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Insideout Automation",
-  description: "",
+  description: "Home | Insideout Automation",
 };
 
 export default async function RootLayout({

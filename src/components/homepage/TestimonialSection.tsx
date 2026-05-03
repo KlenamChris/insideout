@@ -54,7 +54,7 @@ const TestimonialSection = () => {
   const isSingle = Testimonials.length <= 1;
 
   return (
-    <div className="h-screen hidden p-2 md:flex flex-col items-center bg-black/5 justify-center space-y-4">
+    <div className="h-150 hidden p-2 md:flex flex-col items-center bg-bud justify-center space-y-4">
       <motion.h1
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -62,7 +62,7 @@ const TestimonialSection = () => {
         transition={{ duration: 0.8, ease: "easeInOut" }}
         className="font-medium text-2xl md:text-4xl text-black/25 relative right-10 md:right-65 mb-6"
       >
-        Client Reviews & <span className="text-green-800">Testimonials</span>
+        Client Reviews & <span className="text-evergreen">Testimonials</span>
       </motion.h1>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
@@ -72,7 +72,7 @@ const TestimonialSection = () => {
         className="bg-white flex flex-col-reverse md:flex-row-reverse md:h-90 md:w-250 rounded-2xl p-2 gap-2"
       >
         <div
-          className="bg-green-800 text-white basis-2/3 rounded-2xl flex flex-col justify-between p-6"
+          className="bg-evergreen text-white basis-2/3 rounded-2xl flex flex-col justify-between p-6"
           key={testimonial.id}
         >
           <AnimatePresence>
@@ -85,14 +85,14 @@ const TestimonialSection = () => {
               transition={{ duration: 1.8, ease: "easeInOut" }}
               className="space-y-2"
             >
-              <h1 className="font-semibold text-lime-300">{testimonial.title}</h1>
+              <h1 className="md:text-xl font-semibold text-bud">{testimonial.title}</h1>
               <p className="font-extralight text-xs transition-opacity duration-300 text-white/70">
                 {testimonial.testimony}
               </p>
             </motion.div>
           </AnimatePresence>
           <div>
-            <hr className="text-white/70" />
+            <hr className="text-white/50" />
           </div>
           <div className="flex items-center gap-4">
             <motion.div
@@ -114,7 +114,7 @@ const TestimonialSection = () => {
             </motion.div>
             <div className="basis-xl h-50 md:h-auto flex flex-col md:relative md:top-1">
               <AnimatePresence>
-                <Quote className="rotate-180 mb-4 text-lime-300/50" />
+                <Quote className="rotate-180 mb-4 text-bud/50" />
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: 30 }}
@@ -124,7 +124,7 @@ const TestimonialSection = () => {
                   transition={{ duration: 1.5, ease: "easeInOut" }}
                   className="text-left"
                 >
-                  <h1 className="text-md font-semibold text-lime-300">{testimonial.name}</h1>
+                  <h1 className="text-md font-semibold text-bud">{testimonial.name}</h1>
                   <p className="text-xs font-extralight text-white/70">
                     {testimonial.role}
                   </p>
@@ -135,10 +135,10 @@ const TestimonialSection = () => {
             {/* Left & Right Button : I'm yet to configure them */}
             <div className="basis-xs flex flex-row justify-end gap-2 relative bottom-0 top-24 md:top-8 ml-auto">
               <button onClick={prev} disabled={isSingle}>
-                <ChevronLeft className="h-8 w-8 p-2 bg-gray-50 text-black hover:bg-lime-300 transition-all rounded-full  duration-300" />
+                <ChevronLeft className="h-8 w-8 p-2 bg-gray-50 text-evergreen hover:bg-bud transition-all rounded-full  duration-300" />
               </button>
               <button onClick={next}>
-                <ChevronRight className="h-8 w-8 p-2 bg-gray-50 text-black  hover:bg-lime-300 transition-all rounded-full  duration-300" />
+                <ChevronRight className="h-8 w-8 p-2 bg-gray-50 text-evergreen  hover:bg-bud transition-all rounded-full  duration-300" />
               </button>
             </div>
           </div>
