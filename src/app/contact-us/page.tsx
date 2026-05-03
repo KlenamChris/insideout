@@ -1,7 +1,7 @@
 "use client";
 import ContactForm from "@/components/ContactForm";
 import ContactMap from "@/components/ContactMap";
-import { motion } from "motion/react";
+import { motion, Variants } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -28,6 +28,31 @@ const ContactDetails = [
   },
 ];
 
+const ContainerVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+      delayChildren: 0.9,
+    },
+  },
+};
+
+const itemsVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -40,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  },
+};
+
 const page = () => {
   return (
     <div className="min-h-auto pb-5 p-4 md:h-full w-screen md:p-20 pt-20 bg-spring">
@@ -37,7 +62,13 @@ const page = () => {
           style={{ backgroundImage: "url(/1.jpg)" }}
         />
         <div className="absolute inset-0 bg-cover bg-black/50" />
-        <div className="relative md:flex md:gap-4 h-full w-full text-white">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="relative md:flex md:gap-4 h-full w-full text-white"
+        >
           <div className="basis-1/2 flex flex-col justify-between px-10 py-10">
             <div className="mb-5 md:mb-10 space-y-2 md:space-y-4">
               <h1 className="text-3xl md:text-6xl font-bold text-spring">
@@ -49,9 +80,16 @@ const page = () => {
               </p>
             </div>
             <div className="flex itmes-center justify-center">
-              <div className="grid grid-cols-1 md:grid-cols-2  gap-4 md:space-x-8 space-y-5 md:space-y-10">
+              <motion.div
+                variants={ContainerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-2  gap-4 md:space-x-8 space-y-5 md:space-y-10"
+              >
                 {ContactDetails.map((contact) => (
-                  <div
+                  <motion.div
+                    variants={itemsVariants}
                     key={contact.label}
                     className="space-y-2.5 md:space-y-5 text-white font-semi-bold"
                   >
@@ -69,9 +107,9 @@ const page = () => {
                           ))
                         : contact.detail}
                     </p>
-                  </div>
+                  </motion.div>
                 ))}
-              </div>
+              </motion.div>
             </div>
           </div>
           <div className="basis-1/2 bg-evergreen w-full  pt-15 md:pt-0 flex-col rounded-3xl flex justify-center items-center space-y-6">
@@ -94,9 +132,16 @@ const page = () => {
             </motion.div>
             <ContactForm />
           </div>
-        </div>
+        </motion.div>
       </div>
-      <ContactMap />
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <ContactMap />
+      </motion.div>
     </div>
   );
 };

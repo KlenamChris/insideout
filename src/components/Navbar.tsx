@@ -8,8 +8,8 @@ import React, { useEffect, useState } from "react";
 const Navbar = () => {
   const links = [
     { label: "Home", href: "/" },
-    { label: "Products", href: "/products" },
-    { label: "Features", href: "/features" },
+    { label: "Products", href: "/" },
+    { label: "Features", href: "/" },
     { label: "Contact", href: "/contact-us" },
   ];
 
@@ -91,7 +91,10 @@ const Navbar = () => {
               transition={{ duration: 0.2 }}
               className="fixed inset-0 top-0 z-40 h-screen bg-spring/95 backdrop-blur-xl pt-24 px-6 md:hidden flex flex-col gap-8"
             >
-              <button className="text-bud" onClick={() => setIsMobileMenuOpen(false)}>
+              <button
+                className="text-bud"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
                 <XIcon className="md:hidden absolute top-10 right-10" />
               </button>
               <nav className="flex flex-col gap-6 items-center text-center">
